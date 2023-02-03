@@ -17,6 +17,7 @@ public class EduChallenge {
     }
 
     // this one only passed 9/10 cases
+    // possible solution: https://www.baeldung.com/java-depth-first-search
     public static void cyclicDependencyCheck() {
         // cyclic
         // 1 2 3 4 5
