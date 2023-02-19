@@ -1,0 +1,31 @@
+scan first line of string as startTimeStr
+scan second line of string as endTimeStr
+
+set startTimeHourMinSec = startTimeStr.split(":")
+set endTimeHourMinSec = endTimeStr.split(":")
+
+set SECONDS_IN_HOURS = 60*60
+set SECONDS_IN_MIN = 60
+
+startTimeTotalSeconds = parseInt(startTimeHourMinSec[0]) * SECONDS_IN_HOURS 
+                        + parseInt(startTimeHourMinSec[1]) * SECONDS_IN_MIN
+                        + parseInt(startTimeHourMinSec[2])
+                        
+endTimeTotalSeconds = parseInt(endTimeHourMinSec[0]) * SECONDS_IN_HOURS 
+                        + parseInt(endTimeHourMinSec[1]) * SECONDS_IN_MIN
+                        + parseInt(endTimeHourMinSec[2])
+
+elapsedTimeTotalSeconds = endTimeHourMinSec - startTimeHourMinSec
+
+// if not a static typed language REMOVE decimals or ROUND DOWN/get FLOOR value
+elapsedHours = elapsedTimeTotalSeconds / SECONDS_IN_HOURS
+elapsedTimeTotalSeconds = elapsedTimeTotalSeconds % SECONDS_IN_HOURS
+
+elapsedMins = elapsedTimeTotalSeconds / SECONDS_IN_MIN
+elapsedTimeTotalSeconds = elapsedTimeTotalSeconds % SECONDS_IN_MIN
+
+elapsedSeconds = elapsedTimeTotalSeconds
+
+print elapsedHours + " hour/s and " + elapsedMins + " minute/s and " + elapsedSeconds + " second/s"
+
+        
